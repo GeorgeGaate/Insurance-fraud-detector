@@ -4,8 +4,8 @@ import joblib
 import numpy as np
 
 # Load model and feature names
-model = joblib.load("C:/Users/ADMIN/Documents/Projects/Insurance fraud/fraud_model_lgbm.joblib")
-feature_names = joblib.load("C:/Users/ADMIN/Documents/Projects/Insurance fraud/feature_names.joblib")
+model = joblib.load("fraud_model_lgbm.joblib")
+feature_names = joblib.load("feature_names.joblib")
 
 # Threshold for classification
 THRESHOLD = 0.72
