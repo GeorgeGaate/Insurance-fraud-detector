@@ -16,6 +16,10 @@ app = FastAPI(title="Insurance Fraud Detection API")
 class InsuranceClaim(BaseModel):
     features: dict
 
+@app.get("/")
+def read_root():
+    return {"message": "Fraud detection API is running"}
+    
 @app.post("/predict")
 def predict(claim: InsuranceClaim):
     # Extract features from input and arrange in correct order
