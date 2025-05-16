@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+import uvicorn
+
 
 # Load model and feature names
 model = joblib.load("fraud_model_lgbm.joblib")
@@ -34,3 +36,6 @@ def predict(claim: InsuranceClaim):
         "is_fraud": is_fraud,
         "threshold": THRESHOLD
     }
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
