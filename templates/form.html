@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Fraud Prediction</title>
+</head>
+<body>
+    <h2>Insurance Fraud Prediction Form</h2>
+    <form action="{{ url_for('predict') }}" method="post">
+        <!-- Numeric Inputs -->
+        <label for="Age">Driver's Age:</label>
+        <input type="number" id="Age" name="Age" min="0" max="100" step="1"><br><br>
+        <label for="RepNumber"> Repair Number:</label>
+        <input type="number" id="RepNumber" name="RepNumber" min="1" max="16"><br><br>
+        <label for="WeekOfMonth">Week of Month:</label>
+        <input type="number" id="WeekOfMonth" name="WeekOfMonth" min="1" max="5"><br><br>
+        <label for="Deductible">Deductible Tax:</label>
+        <input type="number" id="Deductible" name="Deductible" min="300" max="700" step="100"><br><br>
+        <label for="DriverRating">Driver Rating (1-4):</label>
+        <input type="number" id="DriverRating" name="DriverRating" min="1" max="4"><br><br>
+        <!-- Dropdowns for Categorical Inputs -->
+        <label for="BasePolicy">Base Policy:</label>
+        <select id="BasePolicy" name="BasePolicy">
+            <option value="Liability">Liability</option>
+            <option value="Collision">Collision</option>
+            <option value="All Perils">All Perils</option>
+        </select><br><br>
+        <label for="Fault">Fault:</label>
+        <select id="Fault" name="Fault">
+            <option value="Policy Holder">Policy Holder</option>
+            <option value="Third Party">Third Party</option>
+        </select><br><br>
+        <label for="AddressChange_Claim">Address Change (Claim):</label>
+        <select id="AddressChange_Claim" name="AddressChange_Claim">
+            <option value="no change">No Change</option>
+            <option value="4 to 8 years">4 to 8 years</option>
+            <option value="2 to 3 years">2 to 3 years</option>
+            <option value="1 year">1 year</option>
+            <option value="under 6 months">Under 6 months</option>
+        </select><br><br>
+        <label for="VehicleCategory">Vehicle Category:</label>
+        <select id="VehicleCategory" name="VehicleCategory">
+            <option value="Sedan">Sedan</option>
+            <option value="Sport">Sport</option>
+            <option value="Utility">Utility</option>
+        </select><br><br>
+        <label for="MonthClaimed">Month Claimed:</label>
+        <select id="MonthClaimed" name="MonthClaimed">
+            <option value="Jan">Jan</option>
+            <option value="Feb">Feb</option>
+            <option value="Mar">Mar</option>
+            <option value="Apr">Apr</option>
+            <option value="May">May</option>
+            <option value="Jun">Jun</option>
+            <option value="Jul">Jul</option>
+            <option value="Aug">Aug</option>
+            <option value="Sep">Sep</option>
+            <option value="Oct">Oct</option>
+            <option value="Nov">Nov</option>
+            <option value="Dec">Dec</option>
+        </select><br><br>
+        <label for="Make">Car Make:</label>
+        <select id="Make" name="Make">
+            <option value="Pontiac">Pontiac</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Honda">Honda</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Accura">Accura</option>
+            <option value="Ford">Ford</option>
+            <option value="VW">VW</option>
+            <option value="Dodge">Dodge</option>
+            <option value="Saab">Saab</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Saturn">Saturn</option>
+            <option value="Nisson">Nisson</option>
+            <option value="BMW">BMW</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Porche">Porche</option>
+            <option value="Mecedes">Mecedes</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Lexus">Lexus</option>
+        </select><br><br>
+        <label for="DayOfWeekClaimed">Day of Week Claimed:</label>
+        <select id="DayOfWeekClaimed" name="DayOfWeekClaimed">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select><br><br>
+        <label for="PoliceReportFiled">Police Report Filed:</label>
+        <select id="PoliceReportFiled" name="PoliceReportFiled">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select><br><br>
+        <label for="AgeOfPolicyHolder">Age of Policy Holder:</label>
+        <select id="AgeOfPolicyHolder" name="AgeOfPolicyHolder">
+            <option value="31 to 35">31 to 35</option>
+            <option value="36 to 40">36 to 40</option>
+            <option value="41 to 50">41 to 50</option>
+            <option value="51 to 65">51 to 65</option>
+            <option value="26 to 30">26 to 30</option>
+            <option value="over 65">over 65</option>
+            <option value="16 to 17">16 to 17</option>
+            <option value="21 to 25">21 to 25</option>
+            <option value="18 to 20">18 to 20</option>
+        </select><br><br>
+        <label for="NumberOfSuppliments">Number of Suppliments:</label>
+        <select id="NumberOfSuppliments" name="NumberOfSuppliments">
+            <option value="none">none</option>
+            <option value="more than 5">more than 5</option>
+            <option value="3 to 5">3 to 5</option>
+            <option value="1 to 2">1 to 2</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict Fraud">
+    </form>
+</body>
+</html>

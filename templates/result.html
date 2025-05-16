@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Fraud Prediction Result</h2>
+    <p>Fraud Probability: {{ probability }}</p>
+    <p>Prediction: {{ "Fraudulent" if is_fraud else "Legitimate" }}</p>
+    <a href="/">Back to form</a>
+</body>
+</html>
